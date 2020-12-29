@@ -20,18 +20,18 @@ confirm(){
 }
 
 git_name=$(git config user.name)
-author_name=$(ask_question "Author name" "$git_name")
+author_name=$(ask_question "Author name" "Martin Migge")
 
 git_email=$(git config user.email)
-author_email=$(ask_question "Author email" "$git_email")
+author_email=$(ask_question "Author email" "martin@io238.eu")
 
 username_guess=${author_name//[[:blank:]]/}
-author_username=$(ask_question "Author username" "$username_guess")
+author_username=$(ask_question "Author username" "io238")
 
 current_directory=$(pwd)
 folder_name=$(basename "$current_directory")
 
-vendor_name_unsanitized=$(ask_question "Vendor name" "spatie")
+vendor_name_unsanitized=$(ask_question "Vendor name" "io238")
 package_name=$(ask_question "Package name" "$folder_name")
 package_description=$(ask_question "Package description" "")
 
